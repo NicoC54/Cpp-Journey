@@ -16,7 +16,11 @@ int main() {
         case 2:
             std::cout << "its february";
             break;
-              }
+           
+        default:
+            std::cout << "Please enter in only numers (1-12)";
+            break;
+            }
 
 
     return 0;
