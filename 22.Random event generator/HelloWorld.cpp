@@ -4,24 +4,30 @@
 
 int main() {
 
+    int num;
+    int guess;
+    int tries=0;
 
+    srand(time(NULL));
+    num = (rand()%100) + 1;
 
-    srand(time(0));
+    do{
+        tries++;
+        std::cout << "Donnez un nombre entre 1 et 100 \n";
+        std::cin >> guess;
 
-    int randNum = (rand() % 5) +1;
+        if (guess > num){
+            std::cout << "trop haut \n";
+        }
 
-    switch(randNum){
-        case 1: std::cout <<"You win a bumper sticker!\n";
-            break;
-        case 2: std::cout <<"You win a bumper ninja!\n";
-            break;
-        case 3: std::cout <<"You win a bumper poster!\n";
-            break;
-        case 4: std::cout <<"You win a bumper golf!\n";
-            break;
-        case 5: std::cout <<"You win a bumper atom!\n";
-            break;
-    }
+           if (guess < num){
+            std::cout << "trop bas \n";
+        }
+
+    } while (guess!= num);
+
+    std::cout <<"bravo, vous avez mis " << tries << " essais!!!!!" <<std::endl;
+
 
    return 0 ;
 }
