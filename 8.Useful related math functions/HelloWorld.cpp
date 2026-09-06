@@ -3,11 +3,16 @@
 
 int main() {
 
-    int sideA = 10;
-    int sideB = 5;
-    float hypothenuse = sqrt(pow(sideA,2) + pow(sideB,2));
+    double x = 3 ;
+    double y = 4;
+    double z;
 
-    std::cout << "The hypothenuse is: " << hypothenuse << std::endl;
+    z = std::max(x,y);
+    z = std::max(x,y);
+    z = pow(x,y);
+    z = sqrt(x,y);
+    z = a(x,y);
+    z = std::max(x,y);
 
     return 0;
 
