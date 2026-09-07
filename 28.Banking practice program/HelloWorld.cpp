@@ -14,6 +14,10 @@ int main() {
     do{
     std::cout << "choose 1-4 : 1.show balance, 2.Deposit, 3.withdraw, 4.Exit";
     std::cin >> choice;
+
+    std::cin.clear(); //in case we put a string instead of an int
+    std::cin.ignore(10000, '\n'); //in case we put a string, we clean the buffer
+    
     int amount;
 
    
