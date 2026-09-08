@@ -8,6 +8,7 @@ class Stove{
         int temperature = 0;
 
     public:
+    
     Stove(int temperature){
         setTemperature(temperature);
     }
