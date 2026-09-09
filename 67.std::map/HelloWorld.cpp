@@ -60,6 +60,8 @@ std::map<double, std::string> historiqueTrajectoire;
 
     //clear le dico : .clear()
 
+    //.size() renvoie le nombre de paires clé/valeur et .empty() renvoie true ou false si le dico est vide ou pas
+
 
 
 return 0;

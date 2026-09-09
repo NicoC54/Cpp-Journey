@@ -8,7 +8,7 @@
 #include <map>
 #include <unordered_map>
 
-//MAP EST UN DICTIONNAIRE ORDONNE, en gros ca va trier les valeurs selon un ordre chronologique
+//UNORDERED MAP EST UN DICTIONNAIRE PAS ORDONNE, en gros ca va mettre les valeurs dans aucun ordre particulier
 
 int main() {
 
@@ -60,6 +60,8 @@ std::unordered_map<double, std::string> historiqueTrajectoire;
     std::cout <<"verif apres erase" << check<< std::endl;; //renvoie 1
 
     //clear le dico : .clear()
+
+    //.size() renvoie le nombre de paires clé/valeur et .empty() renvoie true ou false si le dico est vide ou pas
 
 
 
