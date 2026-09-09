@@ -7,8 +7,8 @@ int factorial_recursive(int n);
 int main() {
 
     //factorial(5);
-    int sum = factorial_recursive(5);
-    std::cout << sum;
+    long int sum = factorial_recursive(20);
+    std::cout << sum <<std::endl;
 
     return 0;
 }
