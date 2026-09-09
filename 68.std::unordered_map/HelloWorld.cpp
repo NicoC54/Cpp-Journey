@@ -6,14 +6,14 @@
 #include <deque>
 #include <functional>
 #include <map>
-
+#include <unordered_map>
 
 //MAP EST UN DICTIONNAIRE ORDONNE, en gros ca va trier les valeurs selon un ordre chronologique
 
 int main() {
 
 
-std::map<double, std::string> historiqueTrajectoire;
+std::unordered_map<double, std::string> historiqueTrajectoire;
 
     historiqueTrajectoire[0.0] = "Demarrage";
     historiqueTrajectoire[2.5] = "Contournement obstacle";
@@ -30,6 +30,7 @@ std::map<double, std::string> historiqueTrajectoire;
     for (const auto& [cle,valeur] : historiqueTrajectoire){
         std::cout << cle << "s : " << valeur << std::endl;
     }
+
 
     //ajouter un couple clé/valeur:
     historiqueTrajectoire[7]="test_ajout";
@@ -59,6 +60,9 @@ std::map<double, std::string> historiqueTrajectoire;
     std::cout <<"verif apres erase" << check<< std::endl;; //renvoie 1
 
     //clear le dico : .clear()
+
+
+
 
 
 
