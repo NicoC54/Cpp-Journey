@@ -9,7 +9,8 @@
 
 //std::deque est un conteneur qui permet d'ajotuer ou supprimer des elemetns aux deux extremites, tout en autorisant lacces direct par index
 //les données sont stockées sous plusieurs blocs de memoire de taille fixe géré par un tableau de pointeurs
-//principales opérations : .push_back .pop_back, push_front, .pop_front en O(1)
+//principales opérations : .push_back .pop_back, push_front, .pop_front en O(1) 
+//front etant les premiers indices, back etant les derniers indices.
 //acces direct par index
 
 
