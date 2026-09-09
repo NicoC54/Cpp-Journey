@@ -5,7 +5,7 @@
 /* EXERCICE 1
 int main() {
 
-    std::array <float,3> coords;
+    std::array <float,3> coords = {};
     coords[0] = 1.5;
     coords[1] = 1.5;
 
@@ -37,8 +37,8 @@ int main() {
 }
 
 void calculerMoyenne(const std::array <int,5>& array){
-    float somme;
-    float moyenne;
+    float somme = 0;
+    float moyenne = 0;
     for (int valeur : array)
         somme +=valeur;
 
@@ -62,7 +62,7 @@ int main() {
     return 0;
 }
 
-void mettreAJourPosition(std::array<float, 3>& position, const std::array<float, 3> vitesse){
+void mettreAJourPosition(std::array<float, 3>& position, const std::array<float, 3>& vitesse){
 
     for (int i=0; i < position.size(); i++){
         position[i] += vitesse[i];
