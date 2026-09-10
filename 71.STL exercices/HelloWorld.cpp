@@ -98,21 +98,6 @@ int main() {
 
     //pour ajouter a lavant ou larriere : push_front() push_back, pour supprimer pop_front() pop_back()
 
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
     return 0;
 }
 

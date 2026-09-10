@@ -49,7 +49,7 @@ void calculerMoyenne(const std::array <int,5>& array){
 
 //EXERCICE 3
 
-void mettreAJourPosition(std::array<float, 3>& position, const std::array<float, 3> vitesse);
+void mettreAJourPosition(std::array<float, 3>& position, const std::array<float, 3>& vitesse);
 
 int main() {
 
