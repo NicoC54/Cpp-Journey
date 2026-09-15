@@ -19,7 +19,7 @@ DronePose current_pose;
 std::mutex pose_mutex;
 
 void update_odometry(double nx, double ny, double nz){
-    std::lock_guard<std::mutex> lock(pose_mutex); //cree un objet lock qui va lock pose mutex à sa creation et unlock lorsquil est detruit
+    std::lock_guard<std::mutex> lock(pose_mutex); //cree un objet lock qui va lock pose mutex à sa creation et unlock lorsquil est detruit. si le mutex nest pas dispo de suite, on attend a cette ligne jsuqua quil soit dispo
     current_pose.x = nx;
     current_pose.y = ny;
     current_pose.z = nz;
@@ -62,4 +62,34 @@ void obstacle_avoidance(){
 
         std::cout << "[Évitement] Traitement de la trame LiDAR " << frame << '\n';
     }
+}
+
+std::mutex arm_mutex;
+std::mutex gripper_mutex;
+
+void grab_payload() {
+
+    std::scoped_lock(arm_mutex,gripper_mutex); // necessite le lock sur le deux mutex pour tourner 
+    std::cout << "[Bras] Verrous bras + pince acquis simultanement sans risque de deadlock\n";
+}
+
+int main() {
+    std::cout << "--- Demarrage du systeme robotique ---\n";
+
+    // Lancement des threads concurrents
+    std::thread t_lidar(lidar_driver);
+    std::thread t_avoidance(obstacle_avoidance);
+    std::thread t_arm(grab_payload);
+
+    // Boucle de contrôle rapide (ex. consigne d'attitude à haute fréquence)
+    update_odometry(1.2, 0.4, 10.5);
+    telemetry_counter.fetch_add(1);
+
+    // Attente de la fin des tâches
+    t_lidar.join();
+    t_avoidance.join();
+    t_arm.join();
+
+    std::cout << "--- Fin de mission. Telemetrie envoyee : " << telemetry_counter.load() << " ---\n";
+    return 0;
 }
