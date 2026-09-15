@@ -1,9 +1,9 @@
 #include <iostream>
 #include <thread>
 
-void function1() {
+void function1(char symbol) {
     for (int i = 0; i < 500; ++i) {
-        std::cout << "+" << std::flush;
+        std::cout << symbol << std::flush;
     }
 }
 
@@ -14,7 +14,7 @@ void function2() {
 }
 
 int main() {
-    std::thread worker1(function1);
+    std::thread worker1(function1, 'o');
     std::thread worker2(function2);
 
     worker1.join();
